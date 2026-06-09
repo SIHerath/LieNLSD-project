@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+
+benchmark_runs/
+benchmark_runs_smoke/
+results/
+saved_models/
+vis/
+
+.DS_Store

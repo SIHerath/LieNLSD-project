@@ -1,0 +1,49 @@
+{
+  "methods": [
+    {
+      "name": "sphere_sdf_raw",
+      "task": "sphere",
+      "activation": "Sigmoid",
+      "basis": "quadratic",
+      "threshold": 1e-4,
+      "mode": "raw_baseline"
+    },
+    {
+      "name": "sphere_lse_raw",
+      "task": "sphere_lse",
+      "activation": "ReLU",
+      "basis": "linear",
+      "threshold": 0.3,
+      "mode": "best_raw"
+    },
+    {
+      "name": "sphere_lse_sparse",
+      "task": "sphere_lse",
+      "activation": "Sigmoid",
+      "basis": "linear",
+      "threshold": 1e-3,
+      "mode": "full_pipeline_overcomplete"
+    },
+    {
+      "name": "sphere_truth_sparse",
+      "task": "sphere_truth",
+      "activation": "Tanh",
+      "basis": "quadratic",
+      "threshold": 0.1,
+      "mode": "full_pipeline_overcomplete"
+    }
+  ],
+  "sample_sizes": [400, 4000, 40000],
+  "seeds": [0, 1, 2],
+  "epochs": 200,
+  "hidden_dim": 200,
+  "n_layers": 3,
+  "batch_size": 256,
+  "lr": 0.001,
+  "opt": "Adan",
+  "num_discovery_samples": 100,
+  "discovery_sample": 0,
+  "epsilon1": 1e-4,
+  "epsilon2": 1e-4,
+  "max_sparsification_iter": 20000
+}
